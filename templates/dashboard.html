@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome {{ user }}</h2>
+<a href="/logout" class="btn btn-danger">Logout</a>
+
+<h3 class="mt-4">Top 4 Crypto Prices</h3>
+<table class="table">
+  <tr><th>Symbol</th><th>Last Price</th></tr>
+  {% for t in tickers %}
+    <tr><td>{{ t['symbol'] }}</td><td>{{ t['last_price'] }}</td></tr>
+  {% endfor %}
+</table>
+
+<h3 class="mt-4">Trading Signals</h3>
+<a href="/signals" class="btn btn-info">BTC EMA Signal</a>
+
+<h3 class="mt-4">Telegram Alerts</h3>
+<a href="/alerts" class="btn btn-success">Enable Alerts</a>
+<a href="/alerts/disable" class="btn btn-danger">Disable Alerts</a>
+{% endblock %}

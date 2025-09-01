@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Enable Telegram Alerts</h2>
+<form method="post">
+  <input type="text" name="telegram_token" placeholder="Bot Token" class="form-control mb-2">
+  <input type="text" name="telegram_chatid" placeholder="Chat ID" class="form-control mb-2">
+  <button class="btn btn-primary">Enable Alerts</button>
+</form>
+<a href="/dashboard" class="btn btn-secondary mt-2">Back</a>
+{% endblock %}
